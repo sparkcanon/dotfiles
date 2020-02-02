@@ -54,7 +54,7 @@ ZSH_THEME="Lambda-Gitster"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -79,8 +79,10 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
-# export TERM="xterm-256color"
-# export TERM=xterm-256color
+export TERM="xterm-256color"
+export TERM=xterm-256color
+export PATH="/usr/local/sbin:$PATH"
+export EDITOR=nvim
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -115,11 +117,9 @@ alias ed='TERM=xterm-24bit emacs --bg-daemon'
 alias edc='TERM=xterm-24bit emacs --bg-daemon && TERM=xterm-24bit ec'
 alias emuand='/Users/praborde/Library/Android/sdk/emulator/emulator'
 alias simulator='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
-# alias tmux="TERM=screen-256color-bce tmux"
+alias tmux="TERM=screen-256color-bce tmux"
 alias mux="tmuxinator-fzf-start.sh"
 alias txd="tmuxinator delete"
+alias config='/usr/bin/git --git-dir=/Users/praborde/.dotfiles/ --work-tree=/Users/praborde'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH="/usr/local/sbin:$PATH"
-export EDITOR=nvim
-alias config='/usr/bin/git --git-dir=/Users/praborde/.dotfiles/ --work-tree=/Users/praborde'
