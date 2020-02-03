@@ -1,4 +1,4 @@
-git clone --bare https://github.com/sparkcanon/dotfiles.git $HOME/.dotfiles
+git clone --recursive --bare https://github.com/sparkcanon/dotfiles.git $HOME/.dotfiles
 function config {
    /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
 }
@@ -12,3 +12,7 @@ if [ $? = 0 ]; then
 fi;
 config checkout
 config config status.showUntrackedFiles no
+
+echo "alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.bashrc
+
+brew install tmux
