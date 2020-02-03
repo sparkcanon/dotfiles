@@ -1,9 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# CUSTOM:BEGIN
-# CUSTOM:END
-
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/praborde/.oh-my-zsh"
 
@@ -72,17 +69,18 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(vi-mode git yarn zsh-autosuggestions fzf-git igit tmux tmuxinator you-should-use $plugins)
+plugins=(zsh-syntax-highlighting vi-mode git yarn zsh-autosuggestions fzf-git igit tmux tmuxinator you-should-use $plugins)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
-export TERM="xterm-256color"
-export TERM=xterm-256color
+# export TERM="xterm-256color"
+# export TERM=xterm-256color
 export PATH="/usr/local/sbin:$PATH"
-export EDITOR=nvim
+export VISUAL=nvim
+export EDITOR="${VISUAL}"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -105,19 +103,15 @@ export EDITOR=nvim
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-# alias vi='nvim'
 alias v='nvim'
-# alias vim='nvim'
 alias lc='colorls'
 alias et='emacs -nw'
-# alias et='TERM=xterm-24bit emacs -nw'
 alias ec='TERM=xterm-24bit emacsclient -nw'
 alias ew='TERM=xterm-24bit emacs'
 alias ed='TERM=xterm-24bit emacs --bg-daemon'
 alias edc='TERM=xterm-24bit emacs --bg-daemon && TERM=xterm-24bit ec'
 alias emuand='/Users/praborde/Library/Android/sdk/emulator/emulator'
 alias simulator='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
-alias tmux="TERM=screen-256color-bce tmux"
 alias mux="tmuxinator-fzf-start.sh"
 alias txd="tmuxinator delete"
 alias config='/usr/bin/git --git-dir=/Users/praborde/.dotfiles/ --work-tree=/Users/praborde'
