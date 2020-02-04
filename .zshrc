@@ -117,3 +117,4 @@ alias txd="tmuxinator delete"
 alias config='/usr/bin/git --git-dir=/Users/praborde/.dotfiles/ --work-tree=/Users/praborde'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
