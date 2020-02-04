@@ -1,5 +1,16 @@
 #/bin/bash
 
+# check to see is git command line installed in this machine
+IS_GIT_AVAILABLE="$(git --version)"
+if [[ $IS_GIT_AVAILABLE == *"version"* ]]; then
+  echo "Git is Available"
+else
+  echo "Git is not installed."
+  brew install git
+fi
+
+echo "--------------------------------------------------"
+
 # Install brew
 if which programname >/dev/null; then
     echo Brew is installed
@@ -97,6 +108,15 @@ if brew ls --version autojump > /dev/null ; then
 else
   echo "Installing autojump.."
   brew install autojump
+fi
+
+echo "--------------------------------------------------"
+
+if brew ls --version zsh > /dev/null ; then
+  echo "zsh is installed"
+else
+  echo "Installing zsh.."
+  brew install zsh
 fi
 
 echo "--------------------------------------------------"
