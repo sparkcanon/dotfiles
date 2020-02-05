@@ -17,7 +17,7 @@ In order to start from scratch use the link below in your terminal
 
 ## Installation
 
-`curl -Lks https://github.com/sparkcanon/dotfiles/blob/master/install-dotfiles.sh | /bin/bash`
+`curl -Lks https://raw.githubusercontent.com/sparkcanon/dotfiles/master/install-dotfiles.sh | /bin/bash`
 
 The above script installs the following;
 
