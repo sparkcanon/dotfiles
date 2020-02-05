@@ -20,17 +20,15 @@ echoSeparator
 
 # Install brew
 if [[ $IS_BREW_AVAILABLE == *"Homebrew"* ]]; then
-    echo Brew is installed
+  echo Brew is installed
 else
-    echo Installing brew.. 🍺
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  echo Installing brew.. 🍺
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
 echoSeparator
 
 if ! command_exists zsh; then
-  echo Zsh is not installed.
-else
   echo Installing zsh..
   brew install zsh
 
@@ -48,7 +46,8 @@ else
     export SHELL="$zsh"
     echo Shell successfully changed to $zsh
   fi
-
+else
+  echo Zsh is not installed.
 fi
 
 echoSeparator
