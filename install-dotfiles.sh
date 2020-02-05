@@ -47,7 +47,7 @@ if ! command_exists zsh; then
     echo Shell successfully changed to $zsh
   fi
 else
-  echo Zsh is not installed.
+  echo Zsh is available
 fi
 
 echoSeparator
