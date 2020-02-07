@@ -2,14 +2,14 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/praborde/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # typewritten, spaceship
-ZSH_THEME="Lambda-Gitster"
+ZSH_THEME="typewritten"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -43,7 +43,7 @@ ZSH_THEME="Lambda-Gitster"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -103,18 +103,21 @@ export EDITOR="${VISUAL}"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias v='nvim'
-alias lc='colorls'
-alias et='emacs -nw'
-alias ec='TERM=xterm-24bit emacsclient -nw'
-alias ew='TERM=xterm-24bit emacs'
-alias ed='TERM=xterm-24bit emacs --bg-daemon'
-alias edc='TERM=xterm-24bit emacs --bg-daemon && TERM=xterm-24bit ec'
-alias emuand='/Users/praborde/Library/Android/sdk/emulator/emulator'
-alias simulator='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
+alias v="nvim"
+alias lc="colorls"
+alias et="emacs -nw"
+alias ec="TERM=xterm-24bit emacsclient -nw"
+alias ew="TERM=xterm-24bit emacs"
+alias ed="TERM=xterm-24bit emacs --bg-daemon"
+alias edc="TERM=xterm-24bit emacs --bg-daemon && TERM=xterm-24bit ec"
+alias emuand="$HOME/Library/Android/sdk/emulator/emulator"
+alias simulator="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
 alias mux="tmuxinator-fzf-start.sh"
 alias txd="tmuxinator delete"
-alias config='/usr/bin/git --git-dir=/Users/praborde/.dotfiles/ --work-tree=/Users/praborde'
+alias config="/usr/bin/git --git-dir=/Users/praborde/.dotfiles/ --work-tree=/Users/praborde"
 
+# fzf related
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# autojump related
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
