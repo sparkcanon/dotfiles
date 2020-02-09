@@ -4,3 +4,6 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = https://github.com/ohmyzsh/ohmyzsh.git
+[submodule ".doom.d"]
+	path = .doom.d
+	url = https://github.com/pratikborde/doom.d.git
