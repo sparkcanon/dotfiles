@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/Users/praborde'
+let g:netrw_dirhist_3='/Users/praborde/Documents/work_projects/tesco/peas'
+let g:netrw_dirhist_2='/Users/praborde'
+let g:netrw_dirhist_1='/Users/praborde/.config/nvim'
+let g:netrw_dirhist_0='/Users/praborde/.config/nvim/custom'
+let g:netrw_dirhist_9='/Users/praborde/.config/nvim'
+let g:netrw_dirhist_8='/Users/praborde/Documents/work_projects/tesco/lego-web'
+let g:netrw_dirhist_7='/Users/praborde/Documents/playground/coc-git-stash'
+let g:netrw_dirhist_6='/Users/praborde/Documents/playground/coc-git-stash/lib'
+let g:netrw_dirhist_5='/Users/praborde/Documents/playground/coc-git-stash'

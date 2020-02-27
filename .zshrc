@@ -79,7 +79,7 @@ source $ZSH/oh-my-zsh.sh
 # export TERM="xterm-256color"
 # export TERM=xterm-256color
 export PATH="/usr/local/sbin:$PATH"
-export VISUAL=nvim
+export VISUAL=vim
 export EDITOR="${VISUAL}"
 
 # You may need to manually set your language environment
@@ -104,7 +104,6 @@ export EDITOR="${VISUAL}"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias v="nvim"
-alias vim="vim -T xterm-256color"
 alias lc="colorls"
 alias et="emacs -nw"
 alias ec="TERM=xterm-24bit emacsclient -nw"
@@ -122,3 +121,8 @@ alias config="/usr/bin/git --git-dir=/Users/praborde/.dotfiles/ --work-tree=/Use
 
 # autojump related
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+# fd
+export FZF_DEFAULT_COMMAND='fd --type file --color=always --follow --hidden --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS="--ansi"
