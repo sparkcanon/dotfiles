@@ -8,7 +8,7 @@ syntax on
 set backspace=indent,eol,start                 " Normal backspace behaviour
 set number                                     " Display number line
 set hidden                                     " Display hidden buffers in list
-set signcolumn=yes                             " Display sign column
+set signcolumn=auto                             " Display sign column
 set autoread                                   " Update file if changed outside
 set incsearch                                  " Turn on incremental search
 set hlsearch
@@ -136,6 +136,8 @@ command! -nargs=1 -complete=file JestSingleFile call functions#jestRunForSingleF
 command! -nargs=0 SessionSave call functions#sessionSave()
 " Load sessions
 command! -nargs=1 -complete=customlist,functions#sessionCompletePath SessionLoad call functions#sessionLoad(<q-args>)
+" Show all diagnostics
+command! -nargs=0 AllDiagnostics execute 'LSClientAllDiagnostics'
 " }}}
 
 " Abbr {{{
@@ -146,6 +148,8 @@ call functions#setupCommandAbbrs('gr','Grep')
 call functions#setupCommandAbbrs('gp','Dispatch! git push')
 call functions#setupCommandAbbrs('gl','Dispatch! git pull')
 call functions#setupCommandAbbrs('gs','Gstash')
+call functions#setupCommandAbbrs('slo','SessionLoad')
+call functions#setupCommandAbbrs('ssa','SessionSave')
 " }}}
 
 " Mappings {{{
