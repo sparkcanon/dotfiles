@@ -58,3 +58,41 @@ function! functions#getGitStash() abort
 				\| copen
 endfunction
 " }}}
+
+" Prettier {{{
+function! functions#prettierFormat() abort
+	let prettierPath = glob(getcwd().'/node_modules/.bin/prettier')
+	if !empty(prettierPath)
+		let getPath = system('prettier --find-config-path .')[:-2]
+		let &l:makeprg = './node_modules/.bin/prettier --config ' . getPath . ' --write'
+	endif
+endfunction
+" }}}
+
+" Sessions {{{
+function! functions#sessionSave() abort
+	let root = fnamemodify(getcwd(0), ':t')
+	execute 'mks! $HOME/.vim/tmp/dir_session/'.root.'.vim' | echo 'Session saved as '.root.'.vim'
+endfunction
+
+function! functions#sessionLoad(file) abort
+	execute 'source $HOME/.vim/tmp/dir_session/'.a:file | echo 'Session '.a:file.' has been loaded'
+endfunction
+
+function! functions#sessionCompletePath(A,L,P) abort
+	let pathList =  split(globpath('$HOME/.vim/tmp/dir_session/', '*.vim'), '\n')
+	let emptyList = []
+	for i in pathList
+		let item = split(i, '/')[-1]
+		let finalList = add(emptyList, item)
+	endfor
+	return finalList
+endfunction
+" }}}
+
+" Jest {{{
+" TODO: Resolve root automatically
+function! functions#jestRunForSingleFile() abort
+	execute 'vnew | terminal cd node_modules/.bin && ./jest --watch '
+endfunction
+" }}}

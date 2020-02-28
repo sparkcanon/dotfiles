@@ -1,5 +1,5 @@
 let g:lsc_enable_autocomplete = v:false " Disable autocompletion
-let g:lsc_trace_level='messages'
+let g:lsc_trace_level='off'
 let g:lsc_hover_popup = v:false
 let g:lsc_server_commands = {
   \ 'javascript': 'typescript-language-server --stdio',

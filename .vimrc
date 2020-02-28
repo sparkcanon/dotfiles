@@ -3,7 +3,7 @@ filetype plugin indent on
 syntax on
 " }}}
 
-" Basic settings {{{
+" Settings {{{
 " Basic
 set backspace=indent,eol,start                 " Normal backspace behaviour
 set number                                     " Display number line
@@ -77,8 +77,17 @@ autocmd GeneralSettings BufEnter * silent! Glcd
 " Auto-resize splits when Vim gets resized.
 autocmd GeneralSettings VimResized * wincmd =
 
-autocmd CompleteDone * silent! pclose
-autocmd CursorMoved * silent! pclose
+autocmd GeneralSettings CompleteDone * silent! pclose
+autocmd GeneralSettings CursorMoved * silent! pclose
+
+" Run prettier on save
+autocmd GeneralSettings BufRead,BufNewFile *.tsx,*.jsx call functions#prettierFormat()
+autocmd GeneralSettings FileType javascript,typescript,less,css,html call functions#prettierFormat()
+autocmd GeneralSettings BufWritePost *.js,*.ts,*.tsx,*.jsx,*.html,*.css,*.less execute 'Make! %'
+
+" Disable cursorline in insert mode
+autocmd InsertEnter * setlocal nocursorline
+autocmd VimEnter,InsertLeave * setlocal cursorline
 "}}}
 
 " Plugins {{{
@@ -121,6 +130,12 @@ command! -nargs=+ -complete=file -bar Grep  cgetexpr functions#grep(<q-args>)
 command! -nargs=+ -complete=file -bar LGrep lgetexpr functions#grep(<q-args>)
 " Git stash list
 command! -nargs=0 Gstash :call functions#getGitStash()
+" Run jest test watcher
+command! -nargs=1 -complete=file JestSingleFile call functions#jestRunForSingleFile()
+" Save sessions (force)
+command! -nargs=0 SessionSave call functions#sessionSave()
+" Load sessions
+command! -nargs=1 -complete=customlist,functions#sessionCompletePath SessionLoad call functions#sessionLoad(<q-args>)
 " }}}
 
 " Abbr {{{
