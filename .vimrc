@@ -85,8 +85,11 @@ autocmd GeneralSettings CursorMoved * silent! pclose
 autocmd GeneralSettings VimLeavePre * call functions#sessionSave()
 
 " Run prettier on save
-autocmd GeneralSettings FileType javascript,typescript,less,css,html,typescriptreact setlocal formatprg=prettier\ --stdin\ --stdin-filepath\ %
-autocmd GeneralSettings FileType javascript,typescript,less,css,html,typescriptreact setlocal formatexpr=
+autocmd GeneralSettings FileType
+			\ javascript,typescript,less,css,html,typescriptreact setlocal
+			\ formatprg=prettier\ --stdin\ --stdin-filepath\ %
+autocmd GeneralSettings FileType
+			\ javascript,typescript,less,css,html,typescriptreact setlocal formatexpr=
 
 " Disable cursorline in insert mode
 autocmd InsertEnter * setlocal nocursorline
@@ -137,7 +140,8 @@ command! -nargs=1 -complete=file JestSingleFile call functions#jestRunForSingleF
 " Save sessions (force)
 command! -nargs=0 SessionSave call functions#sessionSave()
 " Load sessions
-command! -nargs=1 -complete=customlist,functions#sessionCompletePath SessionLoad call functions#sessionLoad(<q-args>)
+command! -nargs=1 -complete=customlist,functions#sessionCompletePath
+			\ SessionLoad call functions#sessionLoad(<q-args>)
 " Show all diagnostics
 command! -nargs=0 AllDiagnostics execute 'LSClientAllDiagnostics'
 " }}}
