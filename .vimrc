@@ -8,7 +8,7 @@ syntax on
 set backspace=indent,eol,start                 " Normal backspace behaviour
 set number                                     " Display number line
 set hidden                                     " Display hidden buffers in list
-set signcolumn=auto                             " Display sign column
+set signcolumn=auto                            " Display sign column
 set autoread                                   " Update file if changed outside
 set incsearch                                  " Turn on incremental search
 set hlsearch
@@ -77,13 +77,16 @@ autocmd GeneralSettings BufEnter * silent! Glcd
 " Auto-resize splits when Vim gets resized.
 autocmd GeneralSettings VimResized * wincmd =
 
+" Auto close preview window
 autocmd GeneralSettings CompleteDone * silent! pclose
 autocmd GeneralSettings CursorMoved * silent! pclose
 
+" Save session on exit
+autocmd GeneralSettings VimLeavePre * call functions#sessionSave()
+
 " Run prettier on save
-autocmd GeneralSettings BufRead,BufNewFile *.tsx,*.jsx call functions#prettierFormat()
-autocmd GeneralSettings FileType javascript,typescript,less,css,html call functions#prettierFormat()
-autocmd GeneralSettings BufWritePost *.js,*.ts,*.tsx,*.jsx,*.html,*.css,*.less execute 'Make! %'
+autocmd GeneralSettings FileType javascript,typescript,less,css,html,typescriptreact setlocal formatprg=prettier\ --stdin\ --stdin-filepath\ %
+autocmd GeneralSettings FileType javascript,typescript,less,css,html,typescriptreact setlocal formatexpr=
 
 " Disable cursorline in insert mode
 autocmd InsertEnter * setlocal nocursorline
@@ -106,8 +109,9 @@ MinPlug tpope/vim-dispatch              " Asynchronous build and test dispatcher
 MinPlug tpope/vim-repeat                " repeat any command
 MinPlug tpope/vim-surround              " quoting/parenthesizing made simple
 MinPlug tpope/vim-commentary            " comment stuff out
+MinPlug tpope/vim-unimpaired            " Pairs of handy bracket mappings
 MinPlug romainl/vim-cool                " A very simple plugin that makes hlsearch more useful
-MinPlug romainl/vim-qf                 " Tame the quickfix window
+MinPlug romainl/vim-qf                  " Tame the quickfix window
 MinPlug godlygeek/tabular               " 🌻 A Vim alignment plugin
 MinPlug markonm/traces.vim              " Range, pattern and substitute preview for Vim
 MinPlug ciaranm/detectindent            " Vim script for automatically detecting indent settings
@@ -124,10 +128,8 @@ colorscheme xcodedark
 " }}}
 
 " Commands {{{
-" Grep for quickfix list
-command! -nargs=+ -complete=file -bar Grep  cgetexpr functions#grep(<q-args>)
 " Grep for location list
-command! -nargs=+ -complete=file -bar LGrep lgetexpr functions#grep(<q-args>)
+command! -nargs=+ -complete=file -bar Grep lgetexpr functions#grep(<q-args>)
 " Git stash list
 command! -nargs=0 Gstash :call functions#getGitStash()
 " Run jest test watcher

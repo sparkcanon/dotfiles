@@ -59,16 +59,6 @@ function! functions#getGitStash() abort
 endfunction
 " }}}
 
-" Prettier {{{
-function! functions#prettierFormat() abort
-	let prettierPath = glob(getcwd().'/node_modules/.bin/prettier')
-	if !empty(prettierPath)
-		let getPath = system('prettier --find-config-path .')[:-2]
-		let &l:makeprg = './node_modules/.bin/prettier --config ' . getPath . ' --write'
-	endif
-endfunction
-" }}}
-
 " Sessions {{{
 function! functions#sessionSave() abort
 	let root = fnamemodify(getcwd(0), ':t')
@@ -93,6 +83,6 @@ endfunction
 " Jest {{{
 " TODO: Resolve root automatically
 function! functions#jestRunForSingleFile() abort
-	execute 'vnew | terminal cd node_modules/.bin && ./jest --watch '
+	execute 'vert terminal ./web/node_modules/.bin/jest --watch '
 endfunction
 " }}}
