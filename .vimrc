@@ -18,6 +18,7 @@ set clipboard+=unnamed                         " System clipboard
 set wrap                                       " Wrap long lines
 set autoindent                                 " Minimal auto indenting for any filetype
 set lazyredraw                                 " Only redraw when I tell you to
+set updatetime=100                             " Lower value helps being async
 
 " Splits
 set splitbelow                                 " Split window opens below
@@ -63,7 +64,9 @@ autocmd GeneralSettings ColorScheme * call functions#modifyBufferColors()
 
 " Lsc colors
 autocmd GeneralSettings ColorScheme * call functions#modifylscColors()
-autocmd GeneralSettings ColorScheme * call functions#modifyCocGitColors()
+
+" Signify colors
+autocmd GeneralSettings ColorScheme * call functions#modifySignifyColors()
 
 " Create a new dir if it doesnt exists
 autocmd GeneralSettings BufWritePre *
@@ -120,6 +123,7 @@ MinPlug markonm/traces.vim              " Range, pattern and substitute preview 
 MinPlug ciaranm/detectindent            " Vim script for automatically detecting indent settings
 MinPlug christoomey/vim-tmux-navigator  " Seamless navigation between tmux panes and vim splits
 MinPlug natebosch/vim-lsc               " A vim plugin for communicating with a language server
+MinPlug mhinz/vim-signify               " ➕ Show a diff using Vim its sign column
 
 " Dirvish
 let g:loaded_netrwPlugin = 1                     " disable netrw
@@ -204,7 +208,7 @@ nnoremap N Nzvzz
 nnoremap * *zvzz
 nnoremap # #zvzz
 
-" Substitue
+" Substitute
 nnoremap <space>sr :%s/<C-r><C-w>//gc<Left><Left><Left>
 xnoremap <space>sr <Esc>:%s/<C-R><C-R>=<SID>functions#getVisualSelection()<CR>//gc<Left><Left><Left>
 
@@ -216,6 +220,9 @@ xnoremap <space>sc :cfdo %s/<C-R><C-R>=<SID>functions#getVisualSelection()<CR>//
 xnoremap ga :Tabularize /
 xnoremap g" :Tabularize / ".*<CR>
 nnoremap ga :Tabularize /
+
+" Format buffer
+nnoremap gQ gggqG
 
 " Previous buffer
 nnoremap <backspace> <C-^>

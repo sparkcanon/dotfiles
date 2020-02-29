@@ -8,20 +8,26 @@ endfunction
 
 " Lsc signs color mods
 function! functions#modifylscColors() abort
-	highlight lscDiagnosticError ctermfg=202
-	highlight lscDiagnosticWarning ctermfg=94
-	highlight lscDiagnosticInfo ctermfg=29
-	highlight lscDiagnosticHint ctermfg=100
-	highlight lscReference ctermbg=59 ctermfg=white
+	" Red
+	highlight lscDiagnosticError ctermfg=196 cterm=bold
+	" Orange
+	highlight lscDiagnosticWarning ctermfg=202 cterm=bold
+	" Green
+	highlight lscDiagnosticInfo ctermfg=48 cterm=bold
+	" Yellow
+	highlight lscDiagnosticHint ctermfg=226 cterm=bold
+	" Grey
+	highlight lscReference ctermbg=241 ctermfg=white
 endfunction
 
 " Signify color mods
-function! functions#modifyCocGitColors() abort
-	highlight CocAddSign guifg=green guibg=NONE ctermbg=NONE
-	highlight CocDeleteSign guifg=#ff0000  guibg=NONE ctermbg=NONE
-	highlight CocChangeSign guifg=#fab005 guibg=NONE ctermbg=NONE
-	highlight CocChangeRemovedSign guifg=#fab005 guibg=NONE ctermbg=NONE
-	highlight CocTopRemovedSign guifg=#ff0000 guibg=NONE ctermbg=NONE
+function! functions#modifySignifyColors() abort
+	" Green
+	highlight SignifySignAdd ctermfg=48
+	" Red
+	highlight SignifySignDelete ctermfg=196
+	" Yellow
+	highlight SignifySignChange ctermfg=226
 endfunction
 " }}}
 

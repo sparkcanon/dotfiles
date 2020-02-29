@@ -9,6 +9,11 @@ let g:lsc_server_commands = {
 	\ 'log_level': -1,
 	\ 'supress_stderr': v:true,
   \ },
+  \ 'jasmine.javascript': {
+	\ 'command': 'typescript-language-server --stdio',
+	\ 'log_level': -1,
+	\ 'supress_stderr': v:true,
+  \ },
   \ 'typescript': {
 	\ 'command': 'typescript-language-server --stdio',
 	\ 'log_level': -1,
