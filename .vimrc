@@ -124,6 +124,9 @@ MinPlug natebosch/vim-lsc               " A vim plugin for communicating with a 
 " Dirvish
 let g:loaded_netrwPlugin = 1                     " disable netrw
 let g:dirvish_mode = ':sort | sort ,^.*[^/]$, r' " Sort dir at the top
+
+" Vim-qf
+let g:qf_mapping_ack_style = 1
 " }}}
 
 " Visual {{{
