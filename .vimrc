@@ -11,14 +11,13 @@ set hidden                                 " Display hidden buffers in list
 set signcolumn=auto                        " Display sign column
 set autoread                               " Update file if changed outside
 set incsearch                              " Turn on incremental search
-set hlsearch
+set hlsearch                               " Highlight search term
 set cursorline                             " Highlight cursor line
 set showmatch                              " Highlight matching paranthesis
 set clipboard+=unnamed                     " System clipboard
 set wrap                                   " Wrap long lines
 set autoindent                             " Minimal auto indenting for any filetype
 set lazyredraw                             " Only redraw when I tell you to
-set updatetime=100                         " Lower value helps being async
 
 " Splits
 set splitbelow                             " Split window opens below
