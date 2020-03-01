@@ -34,6 +34,7 @@ let g:lsc_server_commands = {
   \              'initializationOptions': { 'vimruntime': $VIMRUNTIME, 'runtimepath': &rtp },
   \          },
   \      },
+  \  'supress_stderr': v:true,
   \   },
   \ }
 

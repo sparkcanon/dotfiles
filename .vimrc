@@ -5,46 +5,46 @@ syntax on
 
 " Settings {{{
 " Basic
-set backspace=indent,eol,start                 " Normal backspace behaviour
-set number                                     " Display number line
-set hidden                                     " Display hidden buffers in list
-set signcolumn=auto                            " Display sign column
-set autoread                                   " Update file if changed outside
-set incsearch                                  " Turn on incremental search
+set backspace=indent,eol,start             " Normal backspace behaviour
+set number                                 " Display number line
+set hidden                                 " Display hidden buffers in list
+set signcolumn=auto                        " Display sign column
+set autoread                               " Update file if changed outside
+set incsearch                              " Turn on incremental search
 set hlsearch
-set cursorline                                 " Highlight cursor line
-set showmatch                                  " Highlight matching paranthesis
-set clipboard+=unnamed                         " System clipboard
-set wrap                                       " Wrap long lines
-set autoindent                                 " Minimal auto indenting for any filetype
-set lazyredraw                                 " Only redraw when I tell you to
-set updatetime=100                             " Lower value helps being async
+set cursorline                             " Highlight cursor line
+set showmatch                              " Highlight matching paranthesis
+set clipboard+=unnamed                     " System clipboard
+set wrap                                   " Wrap long lines
+set autoindent                             " Minimal auto indenting for any filetype
+set lazyredraw                             " Only redraw when I tell you to
+set updatetime=100                         " Lower value helps being async
 
 " Splits
-set splitbelow                                 " Split window opens below
-set splitright                                 " Split window opens right
+set splitbelow                             " Split window opens below
+set splitright                             " Split window opens right
 
 " Complete options
-set completeopt=menu,menuone,preview,noinsert  " Open menu and no insert
-set wildmenu                                   " Turn menu on for wild searches
+set completeopt+=menuone,noinsert          " Open menu and no insert
+set wildmenu                               " Turn menu on for wild searches
 
 " Case
-set smartcase                                  " To ignore case in certain cases, overrides ignorecase
-set ignorecase                                 " Ignore case all together
+set smartcase                              " To ignore case in certain cases, overrides ignorecase
+set ignorecase                             " Ignore case all together
 
 " Backup settings
 set sessionoptions-=options
 set viewoptions-=options
-set undofile                                   " Set this option to have full undo power
-set backup                                     " Set this option to enable backup
-set writebackup                                " Set this option to write back up
-set backupdir=$HOME/.vim/tmp/dir_backup//      " Back up dir
-set directory^=$HOME/.vim/tmp/dir_swap//       " Swap file dir
-set undodir=$HOME/.vim/tmp/dir_undo            " Undo dir
+set undofile                               " Set this option to have full undo power
+set backup                                 " Set this option to enable backup
+set writebackup                            " Set this option to write back up
+set backupdir=$HOME/.vim/tmp/dir_backup//  " Back up dir
+set directory^=$HOME/.vim/tmp/dir_swap//   " Swap file dir
+set undodir=$HOME/.vim/tmp/dir_undo        " Undo dir
 
 " Statusline
-set laststatus=2                               " Display statusline
-set ruler                                      " Set ruler in statusline
+set laststatus=2                           " Display statusline
+set ruler                                  " Set ruler in statusline
 set statusline=\ ❮\ %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P\ ❯\ 
 
 " Grep
