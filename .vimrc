@@ -43,7 +43,7 @@ set statusline=\ ❮\ %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P\ ❯\
 " Set wildmenu ignore
 set path-=/usr/include
 set path-=**/node_modules/**
-set path=**
+set path=.,**
 set wildignore=**/node_modules/**
 
 " Grep
@@ -122,8 +122,6 @@ MinPlug ciaranm/detectindent            " Vim script for automatically detecting
 MinPlug christoomey/vim-tmux-navigator  " Seamless navigation between tmux panes and vim splits
 MinPlug natebosch/vim-lsc               " A vim plugin for communicating with a language server
 MinPlug mhinz/vim-signify               " ➕ Show a diff using Vim its sign column
-set runtimepath^=~/.fzf                 " Source system fzf binary for fzf to run
-MinPlug junegunn/fzf.vim                " fzf ❤️ vim
 
 " Dirvish
 let g:loaded_netrwPlugin = 1                     " disable netrw
@@ -161,13 +159,13 @@ command! -nargs=1 -complete=customlist,functions#sessionCompletePath
 command! -nargs=0 AllDiagnostics execute 'LSClientAllDiagnostics'
 " Yank paths
 " Relative path
-command -nargs=0 YRelative call functions#yankPath("relative")
+command! -nargs=0 YRelative call functions#yankPath("relative")
 " Full path
-command -nargs=0 YAbsolute call functions#yankPath("full")
+command! -nargs=0 YAbsolute call functions#yankPath("full")
 " Filename
-command -nargs=0 Yfname call functions#yankPath("filename")
+command! -nargs=0 Yfname call functions#yankPath("filename")
 " Filename
-command -nargs=0 Ydirectory call functions#yankPath("directory")
+command! -nargs=0 Ydirectory call functions#yankPath("directory")
 " }}}
 
 " Abbr {{{
@@ -203,8 +201,10 @@ inoremap        ,=      <C-x><C-l><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>
 nnoremap j gjzz
 nnoremap k gkzz
 
+let mapleader = "\<space>"
+
 " Clear highlights
-nnoremap <space>/ :nohlsearch<CR>
+nnoremap <leader>/ :nohlsearch<CR>
 
 " Tabs
 nnoremap <Tab> gt
@@ -213,7 +213,7 @@ nnoremap <silent> <S-t> :tabnew<CR>
 
 " Terminal
 tnoremap <Esc> <C-\><C-n>
-nnoremap <silent> <space>te :tabe <bar> terminal<CR>
+nnoremap <silent> <leader>te :tabe <bar> terminal<CR>
 
 " Vim-qf
 nmap <UP> <Plug>(qf_qf_toggle)
@@ -226,12 +226,12 @@ nnoremap * *zvzz
 nnoremap # #zvzz
 
 " Substitute
-nnoremap <space>sr :%s/<C-r><C-w>//gc<Left><Left><Left>
-xnoremap <space>sr <Esc>:%s/<C-R><C-R>=<SID>functions#getVisualSelection()<CR>//gc<Left><Left><Left>
+nnoremap <leader>sr :%s/<C-r><C-w>//gc<Left><Left><Left>
+xnoremap <leader>sr <Esc>:%s/<C-R><C-R>=<SID>functions#getVisualSelection()<CR>//gc<Left><Left><Left>
 
 " CFDO
-nnoremap <space>sc :cfdo %s/<C-r><C-w>//g \| update<S-Left><Left><Left><Left><Left><Left>
-xnoremap <space>sc :cfdo %s/<C-R><C-R>=<SID>functions#getVisualSelection()<CR>//gc \| update<S-Left><S-Left><Left><Left><Left><Left>
+nnoremap <leader>sc :cfdo %s/<C-r><C-w>//g \| update<S-Left><Left><Left><Left><Left><Left>
+xnoremap <leader>sc :cfdo %s/<C-R><C-R>=<SID>functions#getVisualSelection()<CR>//gc \| update<S-Left><S-Left><Left><Left><Left><Left>
 
 " Tabularize
 xnoremap ga :Tabularize /
@@ -246,13 +246,19 @@ nnoremap <backspace> <C-^>
 nnoremap gb :ls<CR>:b<Space>
 
 " Open last searched qf
-nnoremap <silent> <space>gr :execute 'Grep '.@/.' %'<CR>
+nnoremap <silent> <leader>gr :execute 'Grep '.@/.' %'<CR>
 
 " Window
-nnoremap <space>w <C-w>
+nnoremap <leader>w <C-w>
 
 " Yank relative path
 " TODO: Create a function that takes a type and returns the file path, file name or
 " the full file path
-nnoremap <space>yr :let @+ = expand("%")<CR>
+nnoremap <leader>yr :let @+ = expand("%")<CR>
+
+" Find
+nnoremap <leader>F :find <C-R>='./'.expand('%:h').'/*'<CR>
+nnoremap <leader>S :sfind <C-R>='./'.expand('%:h').'/*'<CR>
+nnoremap <leader>V :vert sfind <C-R>='./'.expand('%:h').'/*'<CR>
+nnoremap <leader>T :tabfind <C-R>='./'.expand('%:h').'/*'<CR>
 " }}}
