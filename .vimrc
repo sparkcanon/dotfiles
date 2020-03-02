@@ -40,6 +40,12 @@ set laststatus=2                           " Display statusline
 set ruler                                  " Set ruler in statusline
 set statusline=\ ❮\ %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P\ ❯\ 
 
+" Set wildmenu ignore
+set path-=/usr/include
+set path-=**/node_modules/**
+set path=**
+set wildignore=**/node_modules/**
+
 " Grep
 if executable('rg')
 	set grepprg=rg\ --column\ --no-heading\ --smart-case\ --follow\ --vimgrep
@@ -116,6 +122,8 @@ MinPlug ciaranm/detectindent            " Vim script for automatically detecting
 MinPlug christoomey/vim-tmux-navigator  " Seamless navigation between tmux panes and vim splits
 MinPlug natebosch/vim-lsc               " A vim plugin for communicating with a language server
 MinPlug mhinz/vim-signify               " ➕ Show a diff using Vim its sign column
+set runtimepath^=~/.fzf                 " Source system fzf binary for fzf to run
+MinPlug junegunn/fzf.vim                " fzf ❤️ vim
 
 " Dirvish
 let g:loaded_netrwPlugin = 1                     " disable netrw
@@ -138,6 +146,8 @@ colorscheme xcodedark
 " Commands {{{
 " Grep for location list
 command! -nargs=+ -complete=file -bar Grep lgetexpr functions#grep(<q-args>)
+" Grep for location list
+command! -nargs=0 -bar GrepWord lgetexpr functions#grep(expand('<cword>'))
 " Git stash list
 command! -nargs=0 Gstash :call functions#getGitStash()
 " Run jest test watcher
