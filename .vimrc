@@ -80,16 +80,9 @@ autocmd GeneralSettings VimResized * wincmd =
 " Save session on exit
 autocmd GeneralSettings VimLeavePre * call functions#sessionSave()
 
-" Run prettier on save
-autocmd GeneralSettings FileType
-			\ javascript,typescript,less,css,html,typescriptreact setlocal
-			\ formatprg=prettier\ --stdin\ --stdin-filepath\ %
-autocmd GeneralSettings FileType
-			\ javascript,typescript,less,css,html,typescriptreact setlocal formatexpr=
-
 " Disable cursorline in insert mode
-autocmd InsertEnter * setlocal nocursorline
-autocmd VimEnter,InsertLeave * setlocal cursorline
+autocmd GeneralSettings InsertEnter * setlocal nocursorline
+autocmd GeneralSettings VimEnter,InsertLeave * setlocal cursorline
 "}}}
 
 
@@ -130,6 +123,12 @@ let g:dirvish_mode = ':sort | sort ,^.*[^/]$, r' " Sort dir at the top
 
 " Vim-qf
 let g:qf_mapping_ack_style = 1
+" }}}
+
+" Set this after vim polyglot has loaded {{{
+" Set prettier as formatter
+autocmd GeneralSettings FileType javascript,typescript,less,css,html,typescriptreact setlocal formatprg=prettier\ --stdin\ --stdin-filepath\ %
+autocmd GeneralSettings FileType javascript,typescript,less,css,html,typescriptreact setlocal formatexpr=""
 " }}}
 
 " Visual {{{
