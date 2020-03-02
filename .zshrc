@@ -122,7 +122,7 @@ alias config="/usr/bin/git --git-dir=/Users/praborde/.dotfiles/ --work-tree=/Use
 # autojump related
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-# fd
+# rg
 # export FZF_DEFAULT_COMMAND='fd --type file --color=always --follow --hidden --exclude .git'
 export FZF_DEFAULT_COMMAND='rg --files'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -139,7 +139,7 @@ so() {
   [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
 }
 
-# fbr [FUZZY PATTERN] - Checkout specified branch
+# sbr [FUZZY PATTERN] - Checkout specified branch
 # Include remote branches, sorted by most recent commit and limited to 30
 sgb() {
   local branches branch

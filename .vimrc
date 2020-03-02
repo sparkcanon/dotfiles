@@ -1,8 +1,3 @@
-" Syntax {{{
-filetype plugin indent on
-syntax on
-" }}}
-
 " Settings {{{
 " Basic
 set backspace=indent,eol,start             " Normal backspace behaviour
@@ -12,7 +7,6 @@ set signcolumn=auto                        " Display sign column
 set autoread                               " Update file if changed outside
 set incsearch                              " Turn on incremental search
 set hlsearch                               " Highlight search term
-set cursorline                             " Highlight cursor line
 set showmatch                              " Highlight matching paranthesis
 set clipboard+=unnamed                     " System clipboard
 set wrap                                   " Wrap long lines
@@ -58,6 +52,10 @@ augroup GeneralSettings
 	autocmd!
 augroup END
 
+" Auto close preview window
+autocmd GeneralSettings CompleteDone * silent! pclose
+autocmd GeneralSettings CursorMoved * silent! pclose
+
 " Modify buffer colors
 autocmd GeneralSettings ColorScheme * call functions#modifyBufferColors()
 
@@ -79,10 +77,6 @@ autocmd GeneralSettings BufEnter * silent! Glcd
 " Auto-resize splits when Vim gets resized.
 autocmd GeneralSettings VimResized * wincmd =
 
-" Auto close preview window
-autocmd GeneralSettings CompleteDone * silent! pclose
-autocmd GeneralSettings CursorMoved * silent! pclose
-
 " Save session on exit
 autocmd GeneralSettings VimLeavePre * call functions#sessionSave()
 
@@ -97,6 +91,12 @@ autocmd GeneralSettings FileType
 autocmd InsertEnter * setlocal nocursorline
 autocmd VimEnter,InsertLeave * setlocal cursorline
 "}}}
+
+
+" Syntax {{{
+filetype plugin indent on
+syntax on
+" }}}
 
 " Plugins {{{
 if empty(glob(substitute(&packpath, ",.*", "/pack/plugins/opt/minPlug", "")))
@@ -232,4 +232,9 @@ nnoremap <silent> <space>gr :execute 'Grep '.@/.' %'<CR>
 
 " Window
 nnoremap <space>w <C-w>
+
+" Yank relative path
+" TODO: Create a function that takes a type and returns the file path, file name or
+" the full file path
+nnoremap <space>yr :let @+ = expand("%")<CR>
 " }}}
