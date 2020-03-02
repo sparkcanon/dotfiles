@@ -92,3 +92,19 @@ function! functions#jestRunForSingleFile() abort
 	execute 'vert terminal ./web/node_modules/.bin/jest --watch '
 endfunction
 " }}}
+
+" Yank {{{
+function! functions#yankPath(args) abort
+	let init = 'let @+ = expand("$")'
+	if a:args == 'relative'
+		let yankRel = substitute(init, "\"\$\"", "\"\%\"", "")
+	endif
+	if a:args == 'full'
+		let yankRel = substitute(init, "\"\$\"", "\"\%\:p\"", "")
+	endif
+	if a:args == 'filename'
+		let yankRel = substitute(init, "\"\$\"", "\"\%\:t\"", "")
+	endif
+	execute ''.expand(yankRel)
+endfunction
+" }}}

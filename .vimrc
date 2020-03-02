@@ -149,6 +149,13 @@ command! -nargs=1 -complete=customlist,functions#sessionCompletePath
 			\ SessionLoad call functions#sessionLoad(<q-args>)
 " Show all diagnostics
 command! -nargs=0 AllDiagnostics execute 'LSClientAllDiagnostics'
+" Yank paths
+" Relative path
+command -nargs=0 YRel call functions#yankPath("relative")
+" Full path
+command -nargs=0 YFull call functions#yankPath("full")
+" Filename
+command -nargs=0 Yfname call functions#yankPath("filename")
 " }}}
 
 " Abbr {{{
