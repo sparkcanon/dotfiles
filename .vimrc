@@ -97,30 +97,21 @@ syntax on
 " }}}
 
 " Plugins {{{
-if empty(glob(substitute(&packpath, ",.*", "/pack/plugins/opt/minPlug", "")))
-	call system("git clone --depth=1 https://github.com/Jorengarenar/minPlug ".substitute(&packpath, ",.*", "/pack/plugins/opt/minPlug", ""))
-	autocmd VimEnter * nested silent! MinPlugInstall | echo "minPlug: INSTALLED"
-endif
-
-packadd minPlug
-MinPlug arzg/vim-colors-xcode           " Xcode 11’s dark and light colourschemes, now for Vim!
-MinPlug sheerun/vim-polyglot            " A solid language pack for Vim
-MinPlug justinmk/vim-dirvish            " Directory viewer for Vim ⚡️
-MinPlug tpope/vim-fugitive              " 💀 A Git wrapper so awesome, it should be illegal
-MinPlug tpope/vim-eunuch                " Helpers for UNIX
-MinPlug tpope/vim-dispatch              " Asynchronous build and test dispatcher
-MinPlug tpope/vim-repeat                " repeat any command
-MinPlug tpope/vim-surround              " quoting/parenthesizing made simple
-MinPlug tpope/vim-commentary            " comment stuff out
-MinPlug tpope/vim-unimpaired            " Pairs of handy bracket mappings
-MinPlug romainl/vim-cool                " A very simple plugin that makes hlsearch more useful
-MinPlug romainl/vim-qf                  " Tame the quickfix window
-MinPlug godlygeek/tabular               " 🌻 A Vim alignment plugin
-MinPlug markonm/traces.vim              " Range, pattern and substitute preview for Vim
-MinPlug ciaranm/detectindent            " Vim script for automatically detecting indent settings
-MinPlug christoomey/vim-tmux-navigator  " Seamless navigation between tmux panes and vim splits
-MinPlug natebosch/vim-lsc               " A vim plugin for communicating with a language server
-MinPlug mhinz/vim-signify               " ➕ Show a diff using Vim its sign column
+packadd vim-polyglot        " A solid language pack for Vim
+packadd vim-dirvish         " Directory viewer for Vim ⚡️
+packadd vim-fugitive        " 💀 A Git wrapper so awesome, it should be illegal
+packadd vim-eunuch          " Helpers for UNIX
+packadd vim-dispatch        " Asynchronous build and test dispatcher
+packadd vim-repeat          " repeat any command
+packadd vim-surround        " quoting/parenthesizing made simple
+packadd vim-commentary      " comment stuff out
+packadd vim-unimpaired      " Pairs of handy bracket mappings
+packadd vim-cool            " A very simple plugin that makes hlsearch more useful
+packadd vim-qf              " Tame the quickfix window
+packadd tabular             " 🌻 A Vim alignment plugin
+packadd traces.vim          " Range, pattern and substitute preview for Vim
+packadd detectindent        " Vim script for automatically detecting indent settings
+packadd vim-lsc             " A vim plugin for communicating with a language server
 
 " Dirvish
 let g:loaded_netrwPlugin = 1                     " disable netrw
@@ -137,6 +128,7 @@ autocmd GeneralSettings FileType javascript,typescript,less,css,html,typescriptr
 " }}}
 
 " Visual {{{
+packadd vim-colors-xcode    " Xcode 11’s dark and light colourschemes, now for Vim!
 colorscheme xcodedark
 " }}}
 
@@ -170,7 +162,6 @@ command! -nargs=0 Ydirectory call functions#yankPath("directory")
 " Abbr {{{
 call functions#setupCommandAbbrs('w','update')
 call functions#setupCommandAbbrs('sov','source $MYVIMRC')
-call functions#setupCommandAbbrs('Mi','MinPlugInstall')
 call functions#setupCommandAbbrs('gr','Grep')
 call functions#setupCommandAbbrs('gp','Dispatch! git push')
 call functions#setupCommandAbbrs('gl','Dispatch! git pull')
@@ -250,14 +241,14 @@ nnoremap <silent> <leader>gr :execute 'Grep '.@/.' %'<CR>
 " Window
 nnoremap <leader>w <C-w>
 
-" Yank relative path
-" TODO: Create a function that takes a type and returns the file path, file name or
-" the full file path
-nnoremap <leader>yr :let @+ = expand("%")<CR>
-
 " Find
 nnoremap <leader>F :find <C-R>='./'.expand('%:h').'/*'<CR>
 nnoremap <leader>S :sfind <C-R>='./'.expand('%:h').'/*'<CR>
 nnoremap <leader>V :vert sfind <C-R>='./'.expand('%:h').'/*'<CR>
 nnoremap <leader>T :tabfind <C-R>='./'.expand('%:h').'/*'<CR>
+" }}}
+
+" Heavier plugins {{{
+packadd vim-tmux-navigator  " Seamless navigation between tmux panes and vim splits
+packadd vim-signify         " ➕ Show a diff using Vim its sign column
 " }}}
