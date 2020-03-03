@@ -71,6 +71,8 @@ function! functions#sessionSave() abort
 	if !empty(l:findGit)
 		let root = fnamemodify(getcwd(0), ':t')
 		execute 'mks! $HOME/.vim/tmp/dir_session/'.root.'.vim' | echo 'Session saved as '.root.'.vim'
+	else
+		echo "Failed: not a git repo."
 	endif
 endfunction
 

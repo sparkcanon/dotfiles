@@ -17,10 +17,6 @@ set lazyredraw                             " Only redraw when I tell you to
 set splitbelow                             " Split window opens below
 set splitright                             " Split window opens right
 
-" Complete options
-set completeopt+=menuone,noinsert          " Open menu and no insert
-set wildmenu                               " Turn menu on for wild searches
-
 " Case
 set smartcase                              " To ignore case in certain cases, overrides ignorecase
 set ignorecase                             " Ignore case all together
@@ -40,11 +36,21 @@ set laststatus=2                           " Display statusline
 set ruler                                  " Set ruler in statusline
 set statusline=\ ❮\ %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P\ ❯\ 
 
-" Set wildmenu ignore
+" Complete options
+set completeopt+=menuone,noinsert          " Open menu and no insert
+set wildmenu                               " Turn menu on for wild searches
+set wildignorecase " Ignore case for wildmenuo
+set wildignore=*.swp,*.bak
+set wildignore+=**/node_modules/**
+set wildignore+=*.pyc,*.class,*.sln,*.Master,*.csproj,*.csproj.user,*.cache,*.dll,*.pdb,*.min.*
+set wildignore+=*/.git/**/*,*/.hg/**/*,*/.svn/**/*
+set wildignore+=tags
+set wildignore+=*.tar.*
+
+" Set path
 set path-=/usr/include
 set path-=**/node_modules/**
 set path=.,**
-set wildignore=**/node_modules/**
 
 " Grep
 if executable('rg')
@@ -132,9 +138,9 @@ colorscheme xcodedark
 " }}}
 
 " Commands {{{
-" Grep for location list
+" Grep for quickfix list
 command! -nargs=+ -complete=file -bar Grep cgetexpr functions#grep(<q-args>)
-" Grep for location list
+" Grep for quickfix list
 command! -nargs=0 -bar GrepWord cgetexpr functions#grep(expand('<cword>'))
 " Git stash list
 command! -nargs=0 Gstash :call functions#getGitStash()
