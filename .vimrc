@@ -111,7 +111,6 @@ packadd vim-qf              " Tame the quickfix window
 packadd tabular             " 🌻 A Vim alignment plugin
 packadd traces.vim          " Range, pattern and substitute preview for Vim
 packadd detectindent        " Vim script for automatically detecting indent settings
-packadd vim-lsc             " A vim plugin for communicating with a language server
 
 " Dirvish
 let g:loaded_netrwPlugin = 1                     " disable netrw
@@ -203,7 +202,7 @@ nnoremap <silent> <S-t> :tabnew<CR>
 
 " Terminal
 tnoremap <Esc> <C-\><C-n>
-nnoremap <silent> <leader>te :tabe <bar> terminal<CR>
+nnoremap <silent> <leader>tt :tab terminal<CR>
 
 " Vim-qf
 nmap <UP> <Plug>(qf_qf_toggle)
@@ -233,7 +232,6 @@ nnoremap gQ gggqG
 
 " Previous buffer
 nnoremap <backspace> <C-^>
-nnoremap gb :ls<CR>:b<Space>
 
 " Open last searched qf
 nnoremap <silent> <leader>gr :execute 'Grep '.@/.' %'<CR>
@@ -246,9 +244,16 @@ nnoremap <leader>F :find <C-R>='./'.expand('%:h').'/*'<CR>
 nnoremap <leader>S :sfind <C-R>='./'.expand('%:h').'/*'<CR>
 nnoremap <leader>V :vert sfind <C-R>='./'.expand('%:h').'/*'<CR>
 nnoremap <leader>T :tabfind <C-R>='./'.expand('%:h').'/*'<CR>
+
+" Lists
+" registers
+nnoremap gr :<C-u>registers<CR>:normal! "p<Left>
+" buffers
+nnoremap gb :<c-u>ls<CR>:b<Space>
 " }}}
 
-" Heavier plugins {{{
+" Heavier plugins load last {{{
 packadd vim-tmux-navigator  " Seamless navigation between tmux panes and vim splits
 packadd vim-signify         " ➕ Show a diff using Vim its sign column
+packadd vim-lsc             " A vim plugin for communicating with a language server
 " }}}
