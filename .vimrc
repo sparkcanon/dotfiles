@@ -91,7 +91,6 @@ autocmd GeneralSettings InsertEnter * setlocal nocursorline
 autocmd GeneralSettings VimEnter,InsertLeave * setlocal cursorline
 "}}}
 
-
 " Syntax {{{
 filetype plugin indent on
 syntax on
