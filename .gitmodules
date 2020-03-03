@@ -7,3 +7,6 @@
 [submodule ".doom.d"]
 	path = .doom.d
 	url = https://github.com/pratikborde/doom.d.git
+[submodule ".vim"]
+	path = .vim
+	url = https://github.com/sparkcanon/vim.git
