@@ -67,8 +67,11 @@ endfunction
 
 " Sessions {{{
 function! functions#sessionSave() abort
-	let root = fnamemodify(getcwd(0), ':t')
-	execute 'mks! $HOME/.vim/tmp/dir_session/'.root.'.vim' | echo 'Session saved as '.root.'.vim'
+	let l:findGit = finddir('.git', system('git rev-parse --show-toplevel')[:-2])
+	if !empty(l:findGit)
+		let root = fnamemodify(getcwd(0), ':t')
+		execute 'mks! $HOME/.vim/tmp/dir_session/'.root.'.vim' | echo 'Session saved as '.root.'.vim'
+	endif
 endfunction
 
 function! functions#sessionLoad(file) abort

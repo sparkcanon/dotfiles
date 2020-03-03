@@ -133,9 +133,9 @@ colorscheme xcodedark
 
 " Commands {{{
 " Grep for location list
-command! -nargs=+ -complete=file -bar Grep lgetexpr functions#grep(<q-args>)
+command! -nargs=+ -complete=file -bar Grep cgetexpr functions#grep(<q-args>)
 " Grep for location list
-command! -nargs=0 -bar GrepWord lgetexpr functions#grep(expand('<cword>'))
+command! -nargs=0 -bar GrepWord cgetexpr functions#grep(expand('<cword>'))
 " Git stash list
 command! -nargs=0 Gstash :call functions#getGitStash()
 " Run jest test watcher
@@ -167,6 +167,8 @@ call functions#setupCommandAbbrs('gl','Dispatch! git pull')
 call functions#setupCommandAbbrs('gs','Gstash')
 call functions#setupCommandAbbrs('slo','SessionLoad')
 call functions#setupCommandAbbrs('ssa','SessionSave')
+call functions#setupCommandAbbrs('fd','Cfind! ./')
+call functions#setupCommandAbbrs('fdv','vert sfind ./')
 " }}}
 
 " Mappings {{{
