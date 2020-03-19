@@ -133,6 +133,12 @@ fi
 
 echoSeparator
 
+# install vim
+echo Installing vim.. 📟
+brew install vim
+
+echoSeparator
+
 # install iterm
 if brew ls --versions iterm2 > /dev/null ; then
   # The package is installed

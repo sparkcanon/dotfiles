@@ -4,7 +4,7 @@ In order to start from scratch use the link below in your terminal
 
 ## Contents
 
-- (n)vim
+- vim
 - tmux
 - zsh
 - kitty
@@ -22,7 +22,7 @@ In order to start from scratch use the link below in your terminal
 The above script installs the following;
 
 - Homebrew
-- (n)vim
+- vim
 - tmux
 - tmux plugin manager - TODO
 - kitty

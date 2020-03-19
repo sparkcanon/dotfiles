@@ -1,0 +1,6 @@
+--map-CSS=+.less
+
+--recurse=yes
+
+--exclude=public
+--exclude=*-lock.json

@@ -81,6 +81,8 @@ source $ZSH/oh-my-zsh.sh
 export PATH="/usr/local/sbin:$PATH"
 export VISUAL=vim
 export EDITOR="${VISUAL}"
+export GTAGSCONF=$HOME/.globalrc
+export GTAGSLABEL=ctags
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
