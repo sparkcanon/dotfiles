@@ -106,7 +106,7 @@ export GTAGSLABEL=ctags
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias v="vim"
-alias nv="vim"
+alias nv="nvim"
 alias lc="colorls"
 alias et="emacs -nw"
 alias ec="TERM=xterm-24bit emacsclient -nw"
