@@ -45,7 +45,9 @@
 
 --exclude=*.min.*
 --exclude=*.spec.*
+--exclude=*-spec.*
 --exclude=*.test.*
+--exclude=*-test.*
 --exclude=*.stories.*
 --exclude=*.tar.*
 --exclude=.*bundle.*
@@ -72,6 +74,7 @@
 --exclude=tests
 --exclude=vendor
 --exclude=*-lock.json
+--exclude=node_modules
 
 --sort=no
 

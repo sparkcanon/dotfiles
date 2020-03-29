@@ -1,9 +1,23 @@
 --map-CSS=+.less
+--map-TypeScript=+.tsx
+
+--extras=+q
+--fields=+i
 
 --recurse=yes
 --quiet=yes
 
 --exclude=node_modules
 --exclude=public
+--exclude=.cache-loader
 --exclude=elm-stuff
 --exclude=*-lock.json
+--exclude=*.json
+--exclude=*.md
+--exclude=test
+--exclude=*.svg
+--exclude=*-test.*
+--exclude=*.min.*
+--exclude=*.test.*
+--exclude=*-spec.*
+--exclude=*.spec.*
