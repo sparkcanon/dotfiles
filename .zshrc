@@ -7,9 +7,11 @@ zplug 'plugins/tmux', from:oh-my-zsh, defer:3
 zplug 'plugins/history', from:oh-my-zsh, defer:3
 zplug "modules/git", from:prezto
 zplug 'wfxr/forgit'
+
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "zsh-users/zsh-history-substring-search"
-zplug "zsh-users/zsh-completions", defer:2
+zplug 'zsh-users/zsh-autosuggestions', use:'zsh-autosuggestions.zsh'
+zplug "zsh-users/zsh-history-substring-search", from:oh-my-zsh
+zplug 'zsh-users/zsh-completions', depth:1
 
 zplug check || zplug install
 zplug load
