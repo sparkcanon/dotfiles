@@ -43,7 +43,7 @@ ZSH_THEME="typewritten"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -69,7 +69,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-syntax-highlighting vi-mode git yarn zsh-autosuggestions tmux tmuxinator you-should-use $plugins)
+plugins=(zsh-syntax-highlighting vi-mode git yarn zsh-autosuggestions tmux tmuxinator)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -79,6 +79,7 @@ source $ZSH/oh-my-zsh.sh
 # export TERM="xterm-256color"
 # export TERM=xterm-256color
 export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/share/git-core/contrib/git-jump:$PATH"
 export VISUAL=vim
 export EDITOR="${VISUAL}"
 export GTAGSCONF=$HOME/.globalrc
@@ -124,63 +125,12 @@ alias config="/usr/bin/git --git-dir=/Users/praborde/.dotfiles/ --work-tree=/Use
 # autojump related
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
+# thefuck
+eval $(thefuck --alias)
+
 # rg
 # export FZF_DEFAULT_COMMAND='fd --type file --color=always --follow --hidden --exclude .git'
 export FZF_DEFAULT_COMMAND='rg --files'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--ansi"
-
-# fzf functions
-
-# fo [FUZZY PATTERN] - Open the selected file with the default editor
-#   - Bypass fuzzy finder if there's only one match (--select-1)
-#   - Exit if there's no match (--exit-0)
-so() {
-  local files
-  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
-  [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
-}
-
-# sbr [FUZZY PATTERN] - Checkout specified branch
-# Include remote branches, sorted by most recent commit and limited to 30
-sgb() {
-  local branches branch
-  branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)") &&
-  branch=$(echo "$branches" |
-           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
-  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
-}
-
-# tm [SESSION_NAME | FUZZY PATTERN] - create new tmux session, or switch to existing one.
-# Running `tm` will let you fuzzy-find a session mame
-# Passing an argument to `ftm` will switch to that session if it exists or create it otherwise
-stm() {
-  [[ -n "$TMUX" ]] && change="switch-client" || change="attach-session"
-  if [ $1 ]; then
-    tmux $change -t "$1" 2>/dev/null || (tmux new-session -d -s $1 && tmux $change -t "$1"); return
-  fi
-  session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0) &&  tmux $change -t "$session" || echo "No sessions found."
-}
-
-# tm [SESSION_NAME | FUZZY PATTERN] - delete tmux session
-# Running `tm` will let you fuzzy-find a session mame to delete
-# Passing an argument to `ftm` will delete that session if it exists
-stmk() {
-  if [ $1 ]; then
-    tmux kill-session -t "$1"; return
-  fi
-  session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0) &&  tmux kill-session -t "$session" || echo "No session found to delete."
-}
-
-# fuzzy grep via rg and open in vim with line number
-sgr() {
-  local file
-  local line
-
-  read -r file line <<<"$(rg --no-heading --line-number $@ | fzf -0 -1 | awk -F: '{print $1, $2}')"
-
-  if [[ -n $file ]]
-  then
-     vim $file +$line
-  fi
-}
+export FZF_COMPLETION_TRIGGER='**'
