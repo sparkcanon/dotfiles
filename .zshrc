@@ -2,13 +2,14 @@
 export ZPLUG_HOME=$(brew --prefix)/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
-# zplug 'plugins/git', from:oh-my-zsh, defer:3
 zplug 'themes/sorin', from:oh-my-zsh, defer:3
 zplug 'plugins/tmux', from:oh-my-zsh, defer:3
 zplug 'plugins/history', from:oh-my-zsh, defer:3
 zplug "modules/git", from:prezto
 zplug 'wfxr/forgit'
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-completions", defer:2
 
 zplug check || zplug install
 zplug load
