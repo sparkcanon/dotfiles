@@ -1,4 +1,4 @@
-# My Dotfiles (OUTDATED)
+# My Dotfiles (OUTDATED README)
 
 In order to start from scratch use the link below in your terminal
 
