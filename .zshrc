@@ -29,12 +29,6 @@ export GTAGSLABEL=ctags
 # Alias
 alias v="vim"
 alias nv="nvim"
-alias lc="colorls"
-alias et="emacs -nw"
-alias ec="TERM=xterm-24bit emacsclient -nw"
-alias ew="TERM=xterm-24bit emacs"
-alias ed="TERM=xterm-24bit emacs --bg-daemon"
-alias edc="TERM=xterm-24bit emacs --bg-daemon && TERM=xterm-24bit ec"
 alias emuand="$HOME/Library/Android/sdk/emulator/emulator"
 alias simulator="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
 alias txd="tmuxinator delete"
