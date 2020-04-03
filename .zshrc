@@ -12,6 +12,8 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug 'zsh-users/zsh-autosuggestions', use:'zsh-autosuggestions.zsh'
 zplug "zsh-users/zsh-history-substring-search", from:oh-my-zsh
 zplug 'zsh-users/zsh-completions', depth:1
+zplug 'plugins/tmuxinator', from:oh-my-zsh
+zplug 'plugins/colored-man-pages', from:oh-my-zsh
 
 zplug check || zplug install
 zplug load
@@ -36,7 +38,7 @@ alias edc="TERM=xterm-24bit emacs --bg-daemon && TERM=xterm-24bit ec"
 alias emuand="$HOME/Library/Android/sdk/emulator/emulator"
 alias simulator="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
 alias txd="tmuxinator delete"
-alias config="/usr/bin/git --git-dir=/Users/praborde/.dotfiles/ --work-tree=/Users/praborde"
+alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -51,3 +53,6 @@ export FZF_COMPLETION_TRIGGER='**'
 
 # thefuck
 eval $(thefuck --alias)
+
+# zcompdump location
+compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
