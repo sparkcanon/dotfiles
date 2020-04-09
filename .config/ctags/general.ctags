@@ -9,11 +9,13 @@
 
 --exclude=node_modules
 --exclude=public
+--exclude=dist
 --exclude=.cache-loader
 --exclude=elm-stuff
 --exclude=*-lock.json
 --exclude=*.json
 --exclude=*.md
+--exclude=.eslint*
 --exclude=test
 --exclude=*.svg
 --exclude=*-test.*
