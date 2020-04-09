@@ -12,6 +12,7 @@ SETUVAR _fish_abbr_gfa:git\x20fetch\x20\x2d\x2dall
 SETUVAR _fish_abbr_gll:git\x20pull
 SETUVAR _fish_abbr_gps:git\x20push
 SETUVAR _fish_abbr_gst:git\x20status
+SETUVAR _fish_abbr_gsw:git\x20switch
 SETUVAR _fish_abbr_mux:tmuxinator
 SETUVAR _fish_abbr_tf:tmuxinator\x2dfzf\x2dstart\x2esh
 SETUVAR chain_links:chain\x2elinks\x2eroot\x1echain\x2elinks\x2ejobs\x1echain\x2elinks\x2epwd\x1echain\x2elinks\x2evcs_branch\x1echain\x2elinks\x2evcs_dirty\x1echain\x2elinks\x2evcs_stashed
