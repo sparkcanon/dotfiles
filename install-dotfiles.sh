@@ -1,15 +1,11 @@
 #!/bin/bash
 
-CHSH=${CHSH:-yes}
-IS_BREW_AVAILABLE="$(brew --version)"
-ZSH=${ZSH:-~/.oh-my-zsh}
-
 config() {
    /usr/bin/git --git-dir="$HOME"/.dotfiles/ --work-tree="$HOME" $@
 }
 
-command_exists() {
-  command -v "$@" >/dev/null 2>&1
+has() {
+  type "${1:?too few arguments}" &>/dev/null
 }
 
 echoSeparator() {
@@ -19,141 +15,78 @@ echoSeparator() {
 echoSeparator
 
 # Install brew
-if [[ $IS_BREW_AVAILABLE == *"Homebrew"* ]]; then
-  echo Brew is installed
-else
+if ! has 'brew'; then
   echo Installing brew.. 🍺
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
 echoSeparator
 
-if ! command_exists zsh; then
-  echo Installing zsh..
-  brew install zsh
-
-  # We're going to change the default shell, so back up the current one
-  if [ -n "$SHELL" ]; then
-    echo "$SHELL" > ~/.shell.pre-oh-my-zsh
-  else
-    grep "^$USER:" /etc/passwd | awk -F: '{print $7}' > ~/.shell.pre-oh-my-zsh
-  fi
-
-  # Actually change the default shell to zsh
-  if ! chsh -s "$zsh"; then
-    echo chsh commad unsuccessful. Change your default shell manually.
-  else
-    export SHELL="$zsh"
-    echo Shell successfully changed to $zsh
-  fi
-else
-  echo Zsh is available
+if has 'fish'; then
+  brew install fish
+  curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+  echo /usr/local/bin/fish | sudo tee -a /etc/shells
+  chsh -s /usr/local/bin/fish
 fi
 
 echoSeparator
 
-# check to see is git command line installed in this machine
-command_exists git || {
+# Git
+if has 'git'; then
   echo Git is not installed
   brew install git
-}
-
-echo Git is available
+fi
 
 echoSeparator
 
-# Updating brew
-echo Updating brew 🔁
-brew update
-brew upgrade
-
-echoSeparator
-
-echo Checking dependencies.. 📦
-
-echoSeparator
-
-# install tmux
-if brew ls --versions tmux > /dev/null ; then
-  # The package is installed
-  echo tmux installed 🖥️
-else
-  # The package is not installed
+# Tmux
+if ! has 'tmux'; then
   echo Installing tmux.. 🖥️
   brew install tmux
 fi
 
 echoSeparator
 
-# install tmuxinator
-if brew ls --versions tmuxinator > /dev/null ; then
-  # The package is installed
-  echo tmuxinator installed
-else
-  # The package is not installed
+# Tmuxinator
+if ! has 'tmuxinator'; then
   echo Installing tmuxinator..
   brew install tmuxinator
 fi
 
 echoSeparator
 
-# install kitty
-if brew ls --versions kitty > /dev/null ; then
-  # The package is installed
-  echo kitty installed 🐈
-else
-  # The package is not installed
+# Kitty
+if ! has 'kitty'; then
   echo Installing kitty.. 🐈
   brew cask install kitty
 fi
 
 echoSeparator
 
-# install alacritty
-if brew ls --versions alacritty > /dev/null ; then
-  # The package is installed
-  echo alacritty installed
-else
-  # The package is not installed
+# Alacritty
+if ! has 'alacritty' ; then
   echo Installing alacritty..
   brew cask install alacritty
 fi
 
 echoSeparator
 
-# install neovim
-if brew ls --versions neovim > /dev/null ; then
-  # The package is installed
-  echo neovim installed 📟
-else
-  # The package is not installed
+# Neovim
+if ! has 'neovim'; then
   echo Installing neovim.. 📟
   brew install neovim
 fi
 
 echoSeparator
 
-# install vim
-echo Installing vim.. 📟
+# Vim
+echo Installing latest vim.. 📟
 brew install vim
 
 echoSeparator
 
-# install iterm
-if brew ls --versions iterm2 > /dev/null ; then
-  # The package is installed
-  echo iterm installed 📟
-else
-  # The package is not installed
-  echo Installing iterm.. 📟
-  brew cask install neovim
-fi
-
-echoSeparator
-
-if brew ls --version autojump > /dev/null ; then
-  echo autojump is installed
-else
+# Autojump
+if ! has 'autojump'; then
   echo Installing autojump..
   brew install autojump
 fi
@@ -192,3 +125,4 @@ config submodule init
 config submodule update
 
 echo Configuration finished 🎉
+echo Restart your terminal

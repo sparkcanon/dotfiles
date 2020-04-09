@@ -1,10 +1,10 @@
-# My Dotfiles (OUTDATED README)
+# My Dotfiles
 
 In order to start from scratch use the link below in your terminal
 
 ## Contents
 
-- vim
+- vim & neovim
 - tmux
 - zsh
 - kitty
@@ -23,14 +23,15 @@ The above script installs the following;
 
 - Homebrew
 - vim
+- pack
 - tmux
 - tmux plugin manager - TODO
 - kitty
 - alacritty
-- iterm2
 - tmuxinator
-- zsh -> tries to sets `$SHELL`
+- fish -> tries to sets `$SHELL`
 - git -> mac comes with an older version of git
 
-Then the script clones this `bare` repo in the `$HOME` dir and displaces existing `.dotfiles` to the `.config-backup` folder.
+Then the script clones this `bare` repo in the `$HOME` dir and displaces
+existing `.dotfiles` to the `.config-backup` folder. 
 Next just open (n)vim and `vim-plug` should install all necessary plugins.
