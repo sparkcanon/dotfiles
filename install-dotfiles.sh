@@ -15,7 +15,8 @@ echoSeparator() {
 echoSeparator
 
 if ! has 'git'; then
-	sudo apt install git-all
+	echo Please install git
+	exit 1
 fi
 
 # Install brew
