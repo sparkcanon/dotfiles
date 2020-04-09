@@ -12,10 +12,8 @@ echoSeparator() {
 	echo --------------------------------------------------
 }
 
-echoSeparator
-
 if ! has 'git'; then
-	echo Please install git
+	echo Please install git ❌
 	exit 1
 fi
 
@@ -104,6 +102,8 @@ if has 'brew'; then
 	echo Cleaning up brew 🧹
 	brew cleanup
 
+else
+	exit 1
 fi
 
 echoSeparator
