@@ -7,7 +7,9 @@ SETUVAR FZF_DEFAULT_COMMAND:rg\x20\x2d\x2dfiles
 SETUVAR FZF_DEFAULT_OPTS:\x2d\x2dansi
 SETUVAR THEME_EDEN_PROMPT_CHAR:\u00bb
 SETUVAR __fish_initialized:3100
+SETUVAR _fish_abbr_gap:git\x20add\x20\x2dp
 SETUVAR _fish_abbr_gcb:git\x20checkout\x20\x2db
+SETUVAR _fish_abbr_gcv:git\x20commit\x20\x2dv
 SETUVAR _fish_abbr_gfa:git\x20fetch\x20\x2d\x2dall
 SETUVAR _fish_abbr_gll:git\x20pull
 SETUVAR _fish_abbr_gps:git\x20push
@@ -40,7 +42,7 @@ SETUVAR fish_color_status:red
 SETUVAR fish_color_user:cyan
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
 SETUVAR fish_greeting:\x1d
-SETUVAR fish_key_bindings:fish_default_key_bindings
+SETUVAR fish_key_bindings:fish_vi_key_bindings
 SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:555\x1eyellow
 SETUVAR fish_pager_color_prefix:cyan
