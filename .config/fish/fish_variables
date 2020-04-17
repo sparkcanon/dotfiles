@@ -8,6 +8,9 @@ SETUVAR FZF_DEFAULT_OPTS:\x2d\x2dansi
 SETUVAR THEME_EDEN_PROMPT_CHAR:\u00bb
 SETUVAR VISUAL:vim
 SETUVAR __fish_initialized:3100
+SETUVAR _fish_abbr_dta:dots\x20add\x20\x2dp
+SETUVAR _fish_abbr_dtc:dots\x20commit\x20\x2dv
+SETUVAR _fish_abbr_dtp:dots\x20push
 SETUVAR _fish_abbr_gap:git\x20add\x20\x2dp
 SETUVAR _fish_abbr_gcb:git\x20checkout\x20\x2db
 SETUVAR _fish_abbr_gcv:git\x20commit\x20\x2dv
