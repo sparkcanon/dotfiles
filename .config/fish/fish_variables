@@ -6,6 +6,7 @@ SETUVAR FZF_CTRL_T_COMMAND:rg\x20\x2d\x2dfiles
 SETUVAR FZF_DEFAULT_COMMAND:rg\x20\x2d\x2dfiles
 SETUVAR FZF_DEFAULT_OPTS:\x2d\x2dansi
 SETUVAR THEME_EDEN_PROMPT_CHAR:\u00bb
+SETUVAR VISUAL:vim
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_gap:git\x20add\x20\x2dp
 SETUVAR _fish_abbr_gcb:git\x20checkout\x20\x2db

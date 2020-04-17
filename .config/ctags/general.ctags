@@ -1,5 +1,6 @@
 --map-CSS=+.less
 --map-TypeScript=+.tsx
+--map-OCaml=+.re
 
 --extras=+q
 --fields=+i
