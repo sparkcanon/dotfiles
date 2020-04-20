@@ -2,8 +2,8 @@
 # VERSION: 3.0
 SETUVAR EDITOR:vim
 SETUVAR FZF_COMPLETION_TRIGGER:\x2a\x2a
-SETUVAR FZF_CTRL_T_COMMAND:rg\x20\x2d\x2dfiles
-SETUVAR FZF_DEFAULT_COMMAND:rg\x20\x2d\x2dfiles
+SETUVAR FZF_CTRL_T_COMMAND:fd\x20\x2d\x2dtype\x20f\x20\x2d\x2dhidden\x20\x2d\x2dfollow\x20\x2d\x2dexclude\x20\x2egit
+SETUVAR FZF_DEFAULT_COMMAND:fd\x20\x2d\x2dtype\x20f\x20\x2d\x2dhidden\x20\x2d\x2dfollow\x20\x2d\x2dexclude\x20\x2egit
 SETUVAR FZF_DEFAULT_OPTS:\x2d\x2dansi
 SETUVAR THEME_EDEN_PROMPT_CHAR:\u00bb
 SETUVAR VISUAL:vim
@@ -11,16 +11,19 @@ SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_dta:dots\x20add\x20\x2dp
 SETUVAR _fish_abbr_dtc:dots\x20commit\x20\x2dv
 SETUVAR _fish_abbr_dtp:dots\x20push
+SETUVAR _fish_abbr_dts:dots\x20status
 SETUVAR _fish_abbr_gap:git\x20add\x20\x2dp
 SETUVAR _fish_abbr_gcb:git\x20checkout\x20\x2db
 SETUVAR _fish_abbr_gcv:git\x20commit\x20\x2dv
 SETUVAR _fish_abbr_gfa:git\x20fetch\x20\x2d\x2dall
 SETUVAR _fish_abbr_gll:git\x20pull
+SETUVAR _fish_abbr_gpf:git\x20push\x20\x2d\x2dforce\x2dwith\x2dlease
 SETUVAR _fish_abbr_gps:git\x20push
 SETUVAR _fish_abbr_gst:git\x20status
 SETUVAR _fish_abbr_gsw:git\x20switch
 SETUVAR _fish_abbr_mux:tmuxinator
 SETUVAR _fish_abbr_tf:tmuxinator\x2dfzf\x2dstart\x2esh
+SETUVAR _fish_abbr_tmux:tmux\x20\x2d2
 SETUVAR chain_links:chain\x2elinks\x2eroot\x1echain\x2elinks\x2ejobs\x1echain\x2elinks\x2epwd\x1echain\x2elinks\x2evcs_branch\x1echain\x2elinks\x2evcs_dirty\x1echain\x2elinks\x2evcs_stashed
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr

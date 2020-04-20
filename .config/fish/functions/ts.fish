@@ -1,3 +1,3 @@
 function ts -d "ta alias to create a new tmux sessions"
-    tmux new -s $argv
+    tmux -2 new -s $argv
 end
