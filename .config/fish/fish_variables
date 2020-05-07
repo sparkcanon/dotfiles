@@ -19,6 +19,7 @@ SETUVAR _fish_abbr_gfa:git\x20fetch\x20\x2d\x2dall
 SETUVAR _fish_abbr_gll:git\x20pull
 SETUVAR _fish_abbr_gpf:git\x20push\x20\x2d\x2dforce\x2dwith\x2dlease
 SETUVAR _fish_abbr_gps:git\x20push
+SETUVAR _fish_abbr_grh:git\x20reset\x20\x2d\x2dhard
 SETUVAR _fish_abbr_gst:git\x20status
 SETUVAR _fish_abbr_gsw:git\x20switch
 SETUVAR _fish_abbr_mux:tmuxinator
@@ -54,4 +55,4 @@ SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:555\x1eyellow
 SETUVAR fish_pager_color_prefix:cyan
 SETUVAR fish_pager_color_progress:cyan
-SETUVAR fish_user_paths:/usr/local/opt/fzf/bin
+SETUVAR fish_user_paths:/usr/local/opt/fzf/bin\x1e/usr/local/share/git\x2dcore/contrib/git\x2djump\x1e/usr/local/share/git\x2dcore/contrib/git\x2djump\x1e/usr/local/share/git\x2dcore/contrib/git\x2djump\x1e/usr/local/share/git\x2dcore/contrib/git\x2djump\x1e/usr/local/share/git\x2dcore/contrib/git\x2djump\x1e/usr/local/share/git\x2dcore/contrib/git\x2djump\x1e/usr/local/share/git\x2dcore/contrib/git\x2djump\x1e/usr/local/share/git\x2dcore/contrib/git\x2djump\x1e/usr/local/share/git\x2dcore/contrib/git\x2djump\x1e/usr/local/share/git\x2dcore/contrib/git\x2djump\x1e/usr/local/share/git\x2dcore/contrib/git\x2djump\x1e/usr/local/share/git\x2dcore/contrib/git\x2djump\x1e/usr/local/share/git\x2dcore/contrib/git\x2djump\x1e/usr/local/share/git\x2dcore/contrib/git\x2djump\x1e/usr/local/share/git\x2dcore/contrib/git\x2djump\x1e/usr/local/share/git\x2dcore/contrib/git\x2djump\x1e/usr/local/share/git\x2dcore/contrib/git\x2djump\x1e/usr/local/share/git\x2dcore/contrib/git\x2djump\x1e/usr/local/share/git\x2dcore/contrib/git\x2djump\x1e/usr/local/share/git\x2dcore/contrib/git\x2djump\x1e/usr/local/share/git\x2dcore/contrib/git\x2djump\x1e/usr/local/share/git\x2dcore/contrib/git\x2djump\x1e/usr/local/share/git\x2dcore/contrib/git\x2djump\x1e/usr/local/share/git\x2dcore/contrib/git\x2djump\x1e/usr/local/share/git\x2dcore/contrib/git\x2djump\x1e/usr/local/share/git\x2dcore/contrib/git\x2djump\x1e/usr/local/share/git\x2dcore/contrib/git\x2djump\x1e/usr/local/share/git\x2dcore/contrib/git\x2djump\x1e/usr/local/share/git\x2dcore/contrib/git\x2djump\x1e/usr/local/share/git\x2dcore/contrib/git\x2djump
