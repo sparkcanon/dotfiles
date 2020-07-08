@@ -1,2 +1,10 @@
+# Don't let ripgrep vomit really long lines to my terminal, and show a preview.
 --max-columns=150
 --max-columns-preview
+
+# Because who cares about case!?
+--smart-case
+
+# Using glob patterns to include/exclude files/folders
+--glob=!*.bundle.*
+--glob=!*.snap
