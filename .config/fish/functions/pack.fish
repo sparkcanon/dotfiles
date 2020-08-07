@@ -59,14 +59,18 @@ function pack -a cmd -d "Vim package installer"
                 git rm -f $pack_path
             end
         case list
-            for x in (fd . pack/ -t d -d 3)
-                if test -d $x/.git
-                    echo $x
-                end
-            end
+	    # List all plugins
+	    fd . pack/main/start -t d -d 1
+	    fd . pack/main/opt -t d -d 1
+	case count
+	    # Count the number of plugins
+	    echo Number of plugins:
+	    pack list | wc -l
         case help
+	    # Display help
             _pack_help
         case \*
+	    # Unknown command
             echo "pack: unknown flag or command \"$cmd\" ⁉️"
             _pack_help
     end
