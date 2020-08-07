@@ -1,4 +1,4 @@
-# My Dotfiles
+# My Dotfiles (Readme is outdated)
 
 In order to start from scratch use the link below in your terminal
 
