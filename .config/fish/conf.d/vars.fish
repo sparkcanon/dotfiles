@@ -5,5 +5,3 @@ set -U EDITOR "vim"
 set -U VISUAL "vim"
 
 set -x RIPGREP_CONFIG_PATH "/Users/praborde/.config/ripgrep/.ripgreprc"
-
-set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
