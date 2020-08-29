@@ -38,7 +38,7 @@ window:
   #  y: 0
 
   # Spread additional padding evenly around the terminal content.
-  # dynamic_padding: false
+  dynamic_padding: false
 
   # Window decorations
   #
@@ -567,6 +567,7 @@ key_bindings:
   #- { key: PageDown,  mods: Shift,   action: ScrollPageDown, mode: ~Alt       }
   #- { key: Home,      mods: Shift,   action: ScrollToTop,    mode: ~Alt       }
   #- { key: End,       mods: Shift,   action: ScrollToBottom, mode: ~Alt       }
+
   - { key: Comma,     mods: Command,      command:
       {program: "open", args: ["~/.config/alacritty/alacritty.yml"]}     } # Opens alacritty config
   - { key: N,         mods: Command,      action: SpawnNewInstance       }

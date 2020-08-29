@@ -1,6 +1,10 @@
 function pack -a cmd -d "Vim package installer"
     set og_path (pwd)
-    cd ~/.vim
+    if test -f init.vim
+	    cd ~/.config/nvim
+    else
+	    cd ~/.vim
+    end
     switch "$cmd"
         case dry-add
             # Echos adding existing submodule
@@ -32,12 +36,12 @@ function pack -a cmd -d "Vim package installer"
                 switch $argv[3]
                     case -o
                         echo "Installing as optional 🌚🌚🌚"
-                        cd ~/.vim/pack/main/opt/
+                        cd pack/main/opt/
                         git submodule add https://github.com/$install_url
                         cd -
                     case -s
                         echo "Installing as start 🌝🌝🌝🏼"
-                        cd ~/.vim/pack/main/start/
+                        cd pack/main/start/
                         git submodule add https://github.com/$install_url
                         cd -
                 end
