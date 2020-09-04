@@ -4,4 +4,6 @@ set -U FZF_DEFAULT_OPTS "--ansi"
 set -U EDITOR "vim"
 set -U VISUAL "vim"
 
+set -x MANPAGER "vim -M +MANPAGER -"
+
 set -x RIPGREP_CONFIG_PATH "/Users/praborde/.config/ripgrep/.ripgreprc"
