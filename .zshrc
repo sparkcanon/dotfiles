@@ -57,8 +57,5 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--ansi"
 export FZF_COMPLETION_TRIGGER='**'
 
-# thefuck
-eval $(thefuck --alias)
-
 # zcompdump location
 compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
