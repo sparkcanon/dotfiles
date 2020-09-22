@@ -6,6 +6,7 @@ SETUVAR FZF_CTRL_T_COMMAND:fd\x20\x2d\x2dtype\x20f\x20\x2d\x2dhidden\x20\x2d\x2d
 SETUVAR FZF_DEFAULT_COMMAND:fd\x20\x2d\x2dtype\x20f\x20\x2d\x2dhidden\x20\x2d\x2dfollow\x20\x2d\x2dexclude\x20\x2egit
 SETUVAR FZF_DEFAULT_OPTS:\x2d\x2dansi
 SETUVAR --export --path RIPGREP_CONFIG_PATH:/Users/praborde/\x2econfig/ripgrep/\x2eripgreprc
+SETUVAR TERM:xterm\x2d256color
 SETUVAR THEME_EDEN_PROMPT_CHAR:\u00bb
 SETUVAR VISUAL:vim
 SETUVAR __fish_initialized:3100
