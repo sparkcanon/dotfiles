@@ -27,7 +27,6 @@ SETUVAR _fish_abbr_gsw:git\x20switch
 SETUVAR _fish_abbr_mux:tmuxinator
 SETUVAR _fish_abbr_nv:nvim
 SETUVAR _fish_abbr_tf:tmuxinator\x2dfzf\x2dstart\x2esh
-SETUVAR _fish_abbr_tmux:tmux\x20\x2d2
 SETUVAR _fish_abbr_v:vim
 SETUVAR chain_links:chain\x2elinks\x2eroot\x1echain\x2elinks\x2ejobs\x1echain\x2elinks\x2epwd\x1echain\x2elinks\x2evcs_branch\x1echain\x2elinks\x2evcs_dirty\x1echain\x2elinks\x2evcs_stashed
 SETUVAR fish_color_autosuggestion:555\x1ebrblack

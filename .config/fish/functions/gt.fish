@@ -3,7 +3,7 @@ function gt -a cmd -d "Git utilities"
 		case up
 			git push --set-upstream origin (git rev-parse --abbrev-ref HEAD)
 		case ch
-			git log --pretty=oneline --abbrev-commit --reverse | fzf --tac +s -e | awk '{print $1;}' | read -l result; and git checkout "$result"
+			git branch --all | grep -v HEAD | string trim | fzf | read -l result; and git checkout "$result"
 		case co
 			git log --pretty=oneline --abbrev-commit --reverse | fzf --tac +s -e | awk '{print $1;}' | read -l result; and git checkout "$result"
 		case \*

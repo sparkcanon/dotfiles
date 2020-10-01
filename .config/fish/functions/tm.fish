@@ -2,15 +2,15 @@ function tm -a cmd -d "Tmux shortcuts"
     switch "$cmd"
     	case n
 		# Create a new tmux session
-		tmux new -s $argv
+		tmux new -s $argv[2]
 	case l
 		# List tmux sessions
 		tmux ls | fzf
 	case k
 		# kill tmux session
-		tmux kill-session -t $argv
+		tmux kill-session -t $argv[2]
 	case a
-		tmux attach-session -t $argv
+		tmux attach-session -t $argv[2]
         case \*
 		# Unknown command
 		echo "Tmux: unknown flag or command \"$cmd\" ⁉️"
