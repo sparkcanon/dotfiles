@@ -14,9 +14,9 @@ function gt -a cmd -d "Git utilities"
 end
 
 function _git_help
-    echo "usage: gt up  Git push upstream"
-    echo "       gt ch   Fuzzy search and checkout branch"
-    echo "       gt co 	Fuzzy search and checkout commit"
-    echo "examples:"
-    echo "       gt ch"
+	echo "usage: gt up  Git push upstream"
+	echo "       gt ch   Fuzzy search and checkout branch"
+	echo "       gt co 	Fuzzy search and checkout commit"
+	echo "examples:"
+	echo "       gt ch"
 end

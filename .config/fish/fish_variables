@@ -1,14 +1,14 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR EDITOR:vim
+SETUVAR --export EDITOR:vim
 SETUVAR FZF_COMPLETION_TRIGGER:\x2a\x2a
-SETUVAR FZF_CTRL_T_COMMAND:fd\x20\x2d\x2dtype\x20f\x20\x2d\x2dhidden\x20\x2d\x2dfollow\x20\x2d\x2dexclude\x20\x2egit
-SETUVAR FZF_DEFAULT_COMMAND:fd\x20\x2d\x2dtype\x20f\x20\x2d\x2dhidden\x20\x2d\x2dfollow\x20\x2d\x2dexclude\x20\x2egit
-SETUVAR FZF_DEFAULT_OPTS:\x2d\x2dansi
+SETUVAR --export FZF_CTRL_T_COMMAND:fd\x20\x2d\x2dtype\x20f\x20\x2d\x2dhidden\x20\x2d\x2dfollow\x20\x2d\x2dexclude\x20\x2egit\x20\x2d\x2dexclude\x20__snapshots__\x20\x2d\x2dexclude\x20macaw
+SETUVAR --export FZF_DEFAULT_COMMAND:fd\x20\x2d\x2dtype\x20f\x20\x2d\x2dhidden\x20\x2d\x2dfollow\x20\x2d\x2dexclude\x20\x2egit\x20\x2d\x2dexclude\x20__snapshots__\x20\x2d\x2dexclude\x20macaw
+SETUVAR --export FZF_DEFAULT_OPTS:\x2d\x2dansi
 SETUVAR --export --path RIPGREP_CONFIG_PATH:/Users/praborde/\x2econfig/ripgrep/\x2eripgreprc
-SETUVAR TERM:xterm\x2d256color
+SETUVAR --export TERM:xterm\x2d256color
 SETUVAR THEME_EDEN_PROMPT_CHAR:\u00bb
-SETUVAR VISUAL:vim
+SETUVAR --export VISUAL:vim
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_dta:dots\x20add\x20\x2dp
 SETUVAR _fish_abbr_dtc:dots\x20commit\x20\x2dv
