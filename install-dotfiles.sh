@@ -90,11 +90,51 @@ if has 'brew'; then
 
 	echoSeparator
 
+	# Vim
+	echo Installing ctags.. 📟
+	brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+
+	echoSeparator
+
 	# Autojump
 	if ! has 'autojump'; then
 		echo Installing autojump..
 		brew install autojump
 	fi
+
+	echoSeparator
+
+	if ! has 'fd'; then
+		echo Installing autojump..
+		brew install fd
+	fi
+
+	echoSeparator
+
+	if ! has 'fish'; then
+		echo Installing autojump..
+		brew install fish
+	fi
+
+	echoSeparator
+
+	echo Installing karabiner.. 📟
+	brew cask install karabiner-elements
+
+	echoSeparator
+
+	echo Installing Iosevka curly slab.. 📟
+	brew cask install font-iosevka-curly-slab
+
+	echoSeparator
+
+	echo Installing Iosevka ss08.. 📟
+	brew cask install font-iosevka-ss08
+
+	echoSeparator
+
+	echo Installing zplug.. 📟
+	brew install zplug
 
 	echoSeparator
 
