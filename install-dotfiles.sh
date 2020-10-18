@@ -104,6 +104,7 @@ if has 'brew'; then
 
 	echoSeparator
 
+	# Fd file search
 	if ! has 'fd'; then
 		echo Installing autojump..
 		brew install fd
@@ -111,6 +112,7 @@ if has 'brew'; then
 
 	echoSeparator
 
+	# Fish shell
 	if ! has 'fish'; then
 		echo Installing autojump..
 		brew install fish
@@ -118,21 +120,25 @@ if has 'brew'; then
 
 	echoSeparator
 
+	# Karabiner elements
 	echo Installing karabiner.. 📟
 	brew cask install karabiner-elements
 
 	echoSeparator
 
+	# Iosevka font - curly
 	echo Installing Iosevka curly slab.. 📟
 	brew cask install font-iosevka-curly-slab
 
 	echoSeparator
 
+	# Iosevka font - SS08
 	echo Installing Iosevka ss08.. 📟
 	brew cask install font-iosevka-ss08
 
 	echoSeparator
 
+	# Zplug for zsh
 	echo Installing zplug.. 📟
 	brew install zplug
 
