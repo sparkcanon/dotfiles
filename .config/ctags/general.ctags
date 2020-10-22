@@ -1,6 +1,5 @@
 --map-CSS=+.less
 --map-TypeScript=+.tsx
---map-OCaml=+.re
 
 --extras=+q
 --fields=+i
@@ -8,7 +7,6 @@
 --recurse=yes
 --quiet=yes
 
---exclude=node_modules
 --exclude=public
 --exclude=dist
 --exclude=.cache-loader

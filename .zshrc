@@ -5,18 +5,17 @@ source $ZPLUG_HOME/init.zsh
 zplug 'themes/sorin', from:oh-my-zsh, defer:3
 zplug 'plugins/tmux', from:oh-my-zsh, defer:3
 zplug 'plugins/history', from:oh-my-zsh, defer:3
-zplug "plugins/git", from:oh-my-zsh, defer:2
-zplug 'wfxr/forgit', defer:2
-
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug 'zsh-users/zsh-autosuggestions', use:'zsh-autosuggestions.zsh', defer:2
-# TODO: This is not working very well
-zplug "zsh-users/zsh-history-substring-search", defer:1
-zplug 'zsh-users/zsh-completions', depth:1
 zplug 'plugins/tmuxinator', from:oh-my-zsh, defer:3
 zplug 'plugins/autojump', from:oh-my-zsh, defer:3
 zplug 'plugins/fzf', from:oh-my-zsh, defer:3
-zplug 'plugins/colored-man-pages', from:oh-my-zsh, defer:3
+
+zplug 'wfxr/forgit', defer:3
+zplug "zsh-users/zsh-syntax-highlighting", defer:1
+zplug 'zsh-users/zsh-autosuggestions', defer:2
+
+zplug "zsh-users/zsh-history-substring-search", defer:1
+
+zplug 'zsh-users/zsh-completions', depth:1
 
 zplug check || zplug install
 zplug load
@@ -27,8 +26,15 @@ has() {
 }
 
 # Bind Keys
-has 'history-substring-search-up' && bindkey '^[[A' history-substring-search-up
-has 'history-substring-search-down' && bindkey '^[[B' history-substring-search-down
+if zplug check zsh-users/zsh-history-substring-search; then
+    bindkey '^[[A' history-substring-search-up
+    bindkey '^[[B' history-substring-search-down
+fi
+
+# Enable edit command in $EDITOR
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^E" edit-command-line
 
 # Exports
 export PATH="/usr/local/sbin:$PATH"
@@ -37,6 +43,8 @@ export VISUAL=vim
 export EDITOR="${VISUAL}"
 export GTAGSCONF=$HOME/.globalrc
 export GTAGSLABEL=ctags
+export TERM="xterm-256color"
+export MANPAGER="vim -M +MANPAGER -"
 
 # Alias
 alias v="vim"
@@ -49,10 +57,10 @@ alias ls="ls -lhSG"
 alias ..="cd .."
 alias ...="cd ../../"
 alias ....="cd ../../../"
+alias dots="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 # FZF
-# export FZF_DEFAULT_COMMAND='fd --type file --color=always --follow --hidden --exclude .git'
-export FZF_DEFAULT_COMMAND='rg --files'
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --exclude __snapshots__ --exclude macaw'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--ansi"
 export FZF_COMPLETION_TRIGGER='**'
