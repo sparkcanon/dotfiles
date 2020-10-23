@@ -2,8 +2,8 @@
 # VERSION: 3.0
 SETUVAR --export EDITOR:vim
 SETUVAR FZF_COMPLETION_TRIGGER:\x2a\x2a
-SETUVAR --export FZF_CTRL_T_COMMAND:fd\x20\x2d\x2dtype\x20f\x20\x2d\x2dhidden\x20\x2d\x2dfollow\x20\x2d\x2dexclude\x20\x2egit\x20\x2d\x2dexclude\x20__snapshots__\x20\x2d\x2dexclude\x20macaw
-SETUVAR --export FZF_DEFAULT_COMMAND:fd\x20\x2d\x2dtype\x20f\x20\x2d\x2dhidden\x20\x2d\x2dfollow\x20\x2d\x2dexclude\x20\x2egit\x20\x2d\x2dexclude\x20__snapshots__\x20\x2d\x2dexclude\x20macaw
+SETUVAR --export FZF_CTRL_T_COMMAND:fd\x20\x2d\x2dtype\x20f\x20\x2d\x2dhidden\x20\x2d\x2dfollow\x20\x2d\x2dexclude\x20\x2egit\x20\x2d\x2dexclude\x20__snapshots__\x20\x2d\x2dexclude\x20macaw\x20\x2d\x2dexclude\x20backstop_data
+SETUVAR --export FZF_DEFAULT_COMMAND:fd\x20\x2d\x2dtype\x20f\x20\x2d\x2dhidden\x20\x2d\x2dfollow\x20\x2d\x2dexclude\x20\x2egit\x20\x2d\x2dexclude\x20__snapshots__\x20\x2d\x2dexclude\x20macaw\x20\x2d\x2dexclude\x20backstop_data
 SETUVAR --export FZF_DEFAULT_OPTS:\x2d\x2dansi
 SETUVAR --export --path RIPGREP_CONFIG_PATH:/Users/praborde/\x2econfig/ripgrep/\x2eripgreprc
 SETUVAR --export TERM:xterm\x2d256color

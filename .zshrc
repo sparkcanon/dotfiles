@@ -2,7 +2,7 @@
 export ZPLUG_HOME=$(brew --prefix)/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
-zplug 'themes/sorin', from:oh-my-zsh, defer:3
+zplug 'themes/nicoulaj', from:oh-my-zsh, defer:3
 zplug 'plugins/tmux', from:oh-my-zsh, defer:3
 zplug 'plugins/history', from:oh-my-zsh, defer:3
 zplug 'plugins/tmuxinator', from:oh-my-zsh, defer:3
