@@ -2,7 +2,6 @@
 export ZPLUG_HOME=$(brew --prefix)/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
-zplug 'themes/nicoulaj', from:oh-my-zsh, defer:3
 zplug 'plugins/tmux', from:oh-my-zsh, defer:3
 zplug 'plugins/history', from:oh-my-zsh, defer:3
 zplug 'plugins/tmuxinator', from:oh-my-zsh, defer:3
@@ -12,12 +11,15 @@ zplug 'plugins/fzf', from:oh-my-zsh, defer:3
 zplug 'wfxr/forgit', defer:3
 zplug "zsh-users/zsh-syntax-highlighting", defer:1
 zplug 'zsh-users/zsh-autosuggestions', defer:2
-
 zplug "zsh-users/zsh-history-substring-search", defer:1
-
 zplug 'zsh-users/zsh-completions', depth:1
 
-zplug check || zplug install
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
 zplug load
 
 # Utils
@@ -67,3 +69,6 @@ export FZF_COMPLETION_TRIGGER='**'
 
 # zcompdump location
 compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
+
+# Starship prompt
+eval "$(starship init zsh)"

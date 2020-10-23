@@ -12,3 +12,6 @@ set -g fish_user_paths "/usr/local/opt/python/libexec/bin" $fish_user_paths
 
 # Source autojump
 [ -f /usr/local/share/autojump/autojump.fish ]; and source /usr/local/share/autojump/autojump.fish
+
+# Starship
+starship init fish | source
