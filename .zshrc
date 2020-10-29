@@ -32,6 +32,7 @@ if zplug check zsh-users/zsh-history-substring-search; then
     bindkey '^[[A' history-substring-search-up
     bindkey '^[[B' history-substring-search-down
 fi
+bindkey -v '^?' backward-delete-char
 
 # Enable edit command in $EDITOR
 autoload -z edit-command-line
@@ -55,11 +56,31 @@ alias emuand="$HOME/Library/Android/sdk/emulator/emulator"
 alias simulator="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
 alias txd="tmuxinator delete"
 alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-alias ls="ls -lhSG"
+alias ll="gls --color -h --group-directories-first -1 --almost-all --full-time --time-style=locale"
 alias ..="cd .."
 alias ...="cd ../../"
 alias ....="cd ../../../"
 alias dots="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+
+alias dta='dots add -p'
+alias dtc='dots commit -v'
+alias dtp='dots push'
+alias dts='dots status'
+alias gap='git add -p'
+alias gcb='git checkout -b'
+alias gcv='git commit -v'
+alias gfa='git fetch --all'
+alias gll='git pull'
+alias gpf='git push --force-with-lease'
+alias gps='git push'
+alias grh='git reset --hard'
+alias gst='git status'
+alias gsw='git switch'
+
+alias tmn="tmux new -s"
+alias tml="tmux ls | fzf"
+alias tmk="tmux kill-session -t"
+alias tma="tmux attach-session -t"
 
 # FZF
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --exclude __snapshots__ --exclude macaw'
