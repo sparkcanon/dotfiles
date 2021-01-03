@@ -93,3 +93,5 @@ compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
 
 # Starship prompt
 eval "$(starship init zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

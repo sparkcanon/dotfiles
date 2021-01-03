@@ -1,6 +1,6 @@
 function pack -a cmd -d "Vim package installer"
     set og_path (pwd)
-    if test -f init.vim
+    if test -f init.lua
 	    cd ~/.config/nvim
     else
 	    cd ~/.vim
