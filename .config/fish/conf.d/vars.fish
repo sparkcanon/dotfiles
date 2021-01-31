@@ -7,4 +7,4 @@ set -U TERM "xterm-256color"
 
 set -x MANPAGER "vim -M +MANPAGER -"
 
-set -x RIPGREP_CONFIG_PATH "/Users/praborde/.config/ripgrep/.ripgreprc"
+set -x RIPGREP_CONFIG_PATH "$HOME/.config/ripgrep/.ripgreprc"

@@ -15,7 +15,7 @@
 [difftool]
 	prompt = false
 [core]
-	excludesfile = /Users/praborde/.gitignore_global
+	excludesfile = $HOME/.gitignore_global
 [pull]
 	ff = only
 [core]
